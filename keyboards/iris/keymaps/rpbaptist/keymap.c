@@ -2,8 +2,8 @@
 
 extern keymap_config_t keymap_config;
 
-#define RAISENT LT(_RAISE, KC_ENT)
-#define LOWSPC  LT(_RAISE, KC_SPC)
+#define RAISENT LT(RAISE, KC_ENT)
+#define LOWSPC  LT(RAISE, KC_SPC)
 #define KC_GAME TO(4)
 #define KC_QWER TG(4)
 
