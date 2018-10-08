@@ -2,19 +2,6 @@
 
 extern keymap_config_t keymap_config;
 
-enum {
-  TD_CTRL_LBRACKET = 0,
-  TD_CTRL_RBRACKET = 0
-};
-
-qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_CTRL_LBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_LCTRL, KC_LBRACKET),
-  [TD_CTRL_RBRACKET] = ACTION_TAP_DANCE_DOUBLE(KC_RCTRL, KC_RBRACKET)
-};
-
-#define TDLCTBR TD(TD_CTRL_LBRACKET)
-#define TDRCTBR TD(TD_CTRL_RBRACKET)
-
 #define RAISENT LT(2, KC_ENT)
 #define RAISTAB LT(2, KC_TAB)
 #define GAMING TO(4)
@@ -50,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_SHQT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     TDLCTBR, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_SPC,           RAISENT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, TDRCTBR,
+     KC_LCTBR, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_SPC,           RAISENT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RCTBR,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     LOWER,   KC_LALT,  KC_SPC,                   RAISENT, KC_RGUI, LOWER
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
