@@ -10,8 +10,8 @@ extern keymap_config_t keymap_config;
 #define RAISE MO(2)
 
 #define KC_SHQT RSFT_T(KC_QUOTE)
-#define KC_LCTBR LCTL_T(KC_LBRACKET)
-#define KC_RCTBR RCTL_T(KC_RBRACKET)
+#define LCTLBR LCTL_T(KC_LBRACKET)
+#define RCTLBR RCTL_T(KC_RBRACKET)
 
 #define TABFWD LCTL(KC_TAB)
 #define TABBCK LCTL(LSFT(KC_TAB))
@@ -37,9 +37,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_SHQT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LCTBR, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_SPC,           RAISENT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RCTBR,
+     LCTLBR,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_SPC,           RAISENT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RCTLBR,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    LOWER,   KC_LALT,  KC_SPC,                   RAISENT, KC_RGUI, LOWER
+                                    LOWER,   KC_LALT,  KC_SPC,                   RAISENT, KC_RGUI, KC_RSFT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
