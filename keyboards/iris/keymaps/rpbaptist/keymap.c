@@ -2,14 +2,12 @@
 
 extern keymap_config_t keymap_config;
 
-#define RAISENT LT(2, KC_ENT)
-#define RAISTAB LT(2, KC_TAB)
-#define GAMING TO(4)
+#define RAISENT LT(5, KC_ENT)
+#define GAMING TO(7)
 #define TYPING TO(0)
-#define LOWER MO(1)
-#define RAISE MO(2)
+#define LOWER MO(4)
+#define RAISE MO(5)
 
-#define KC_SHQT RSFT_T(KC_QUOTE)
 #define LCTLBR LCTL_T(KC_LBRACKET)
 #define RCTLBR RCTL_T(KC_RBRACKET)
 
@@ -17,10 +15,10 @@ extern keymap_config_t keymap_config;
 #define TABBCK LCTL(LSFT(KC_TAB))
 
 #define _QWERTY 0
-#define _LOWER 1
-#define _RAISE 2
-#define _COLEMAK 3
-#define _GAME 4
+#define _COLEMAK 1
+#define _LOWER 4
+#define _RAISE 5
+#define _GAME 7
 #define _ADJUST 16
 
 enum custom_keycodes {
@@ -65,8 +63,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, _______, KC_MSTP, KC_VOLD, KC_MPLY, _______,                            KC_KP_4, KC_KP_5, KC_KP_6, KC_PPLS, KC_UNDS, KC_PLUS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______,  _______, _______, KC_MUTE, _______, _______, _______,         KC_ENT,  KC_KP_1, KC_KP_2, KC_KP_3, _______, _______, _______,
-  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────[────┴────────┴────────┘
+     DF(0),   _______, _______, KC_MUTE, _______, _______, _______,          KC_ENT,  KC_KP_1, KC_KP_2, KC_KP_3, _______, _______, DF(1),
+  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, KC_CAPS, _______,                   KC_ENT,  KC_KP_0, KC_PDOT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
