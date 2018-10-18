@@ -5,7 +5,7 @@ extern keymap_config_t keymap_config;
 #define RAISENT LT(2, KC_ENT)
 #define RAISTAB LT(2, KC_TAB)
 #define GAMING TO(4)
-#define TYPING TG(4)
+#define TYPING TO(0)
 #define LOWER MO(1)
 #define RAISE MO(2)
 
