@@ -6,7 +6,6 @@
    #define RGBLIGHT_EFFECT_BREATHING
    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-   #define RGBLIGHT_EFFECT_ALTERNATING
 #endif
 
 #ifdef RGBLIGHT_STATIC_PATTERNS
@@ -16,8 +15,7 @@
 // check dynamic animation effects chose ?
 #if defined(RGBLIGHT_EFFECT_BREATHING) || \
     defined(RGBLIGHT_EFFECT_RAINBOW_MOOD) || \
-    defined(RGBLIGHT_EFFECT_RAINBOW_SWIRL) ||	\
-    defined(RGBLIGHT_EFFECT_ALTERNATING)
+    defined(RGBLIGHT_EFFECT_RAINBOW_SWIRL)
   #define RGBLIGHT_USE_TIMER
   #ifndef RGBLIGHT_ANIMATIONS
     #define RGBLIGHT_ANIMATIONS  // for backward compatibility
