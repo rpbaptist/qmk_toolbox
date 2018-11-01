@@ -5,8 +5,8 @@ extern keymap_config_t keymap_config;
 #define RAISENT LT(5, KC_ENT)
 #define GAMING TO(3)
 #define TYPING TO(0)
-#define LOWER MO(4)
-#define RAISE MO(5)
+#define LOWER TT(4)
+#define RAISE TT(5)
 
 #define LCTLBR LCTL_T(KC_LBRACKET)
 #define RCTLBR RCTL_T(KC_RBRACKET)
