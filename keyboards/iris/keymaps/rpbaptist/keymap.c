@@ -51,15 +51,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_ESC,  KC_F11,  KC_F12, RGB_RMOD, RGB_MOD, RGB_TOG,                            _______, KC_PSLS, KC_PAST, _______, _______, _______,
+     KC_ESC,  KC_F11,  KC_F12, RGB_RMOD, RGB_MOD, RGB_TOG,                            _______, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSLS, KC_PAST,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     GAMING,  RESET,   KC_MPRV, KC_VOLU, KC_MNXT, RGB_VAI,                            KC_KP_7, KC_KP_8, KC_KP_9, KC_PMNS, KC_COLN, KC_PIPE,
+     GAMING,  RESET,   KC_MPRV, KC_VOLU, KC_MNXT, RGB_VAI,                            _______, KC_KP_4, KC_KP_5, KC_KP_6, KC_COLN, KC_PIPE,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, KC_MSTP, KC_VOLD, KC_MPLY, RGB_VAD,                            KC_KP_4, KC_KP_5, KC_KP_6, KC_PPLS, KC_MINS, KC_EQL,
+     _______, _______, KC_MSTP, KC_VOLD, KC_MPLY, RGB_VAD,                            _______, KC_KP_1, KC_KP_2, KC_KP_3, KC_MINS, KC_EQL,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, RGB_SAD, RGB_SAI, RGB_HUD, RGB_HUI, _______, _______,          KC_ENT,  KC_KP_1, KC_KP_2, KC_KP_3, _______, KC_UNDS, KC_PLUS,
+     _______, RGB_SAD, RGB_SAI, RGB_HUD, RGB_HUI, _______, _______,          KC_ENT,  _______, _______, KC_KP_0, KC_PDOT, KC_UNDS, KC_PLUS,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______, _______,                   KC_ENT,  KC_KP_0, KC_PDOT
+                                    _______, _______, _______,                   KC_ENT,  _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
