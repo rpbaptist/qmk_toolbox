@@ -56,13 +56,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     RESET,   TYPING,  GAMING, RGB_RMOD, RGB_MOD, RGB_TOG,                            _______, _______, KC_PSLS, KC_PAST, _______, _______,
+     RESET,   TYPING,  GAMING, RGB_RMOD, RGB_MOD, RGB_TOG,                            XXXXXXX, XXXXXXX, KC_PSLS, KC_PAST, XXXXXXX, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_PSCR, _______, KC_MPRV, KC_VOLU, KC_MNXT, RGB_VAI,                            _______, KC_KP_7, KC_KP_8, KC_KP_9, KC_COLN, KC_PIPE,
+     KC_PSCR, XXXXXXX, KC_MPRV, KC_VOLU, KC_MNXT, RGB_VAI,                            XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_COLN, KC_PIPE,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     S_LOWER, _______, KC_MSTP, KC_VOLD, KC_MPLY, RGB_VAD,                            _______, KC_KP_4, KC_KP_5, KC_KP_6, KC_MINS, KC_PLUS,
+     S_LOWER, XXXXXXX, KC_MSTP, KC_VOLD, KC_MPLY, RGB_VAD,                            XXXXXXX, KC_KP_4, KC_KP_5, KC_KP_6, KC_MINS, KC_PLUS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, RGB_SAD, RGB_SAI, RGB_HUD, RGB_HUI, _______, _______,          _______, _______, KC_KP_1, KC_KP_2, KC_KP_3, KC_UNDS, KC_EQL,
+     _______, RGB_SAD, RGB_SAI, RGB_HUD, RGB_HUI, XXXXXXX, _______,          _______, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, KC_UNDS, KC_EQL,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   _______, KC_KP_0, KC_PDOT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -72,11 +72,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_CAPS, _______, TABBCK,  _______, TABFWD,  _______,                            KC_PGUP, KC_HOME, KC_UP,   KC_END,  _______, _______,
+     KC_CAPS, XXXXXXX, TABBCK,  XXXXXXX, TABFWD,  XXXXXXX,                            KC_PGUP, KC_HOME, KC_UP,   KC_END,  XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT, _______, _______, _______, _______, _______,                            KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, KC_ENT,
+     KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_ENT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______, _______, _______, _______, KC_DEL,           _______, _______, _______, _______, _______, _______, _______,
+     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL,           _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   S_RAISE, _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
