@@ -42,3 +42,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define IGNORE_MOD_TAP_INTERRUPT
 
 #define TAPPING_TOGGLE 2
+
+#define MOUSEKEY_DELAY             20
+#define MOUSEKEY_INTERVAL          16
+#define MOUSEKEY_MAX_SPEED         6
+#define MOUSEKEY_TIME_TO_MAX       20
+#define MOUSEKEY_WHEEL_MAX_SPEED   8
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 40
