@@ -19,14 +19,14 @@ extern keymap_config_t keymap_config;
 #define TABFWD LCTL(KC_TAB)
 #define TABBCK LCTL(LSFT(KC_TAB))
 
-#define _COLEMAKDH 0
+#define _COLEMAKDHM 0
 #define _GAME 3
 #define _FN 4
 #define _NAV 5
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_COLEMAKDH] = LAYOUT(
+  [_COLEMAKDHM] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_ESC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
