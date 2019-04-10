@@ -10,12 +10,15 @@ extern keymap_config_t keymap_config;
 #define T_UTIL TT(9)
 #define T_NAV TT(10)
 
+#define S_SYM MO(8)
 #define S_UTIL MO(9)
 #define S_NAV MO(10)
 
 #define FN_ESC LT(_FN, KC_ESC)
 #define UT_TAB LT(_UTIL, KC_TAB)
-#define SYM_SPC LT(_SYMB, KC_SPC)
+#define SYM_SPC LT(_SYM, KC_SPC)
+
+#define ALT_SPC LALT_T(KC_SPC)
 
 #define LCTLBR LCTL_T(KC_LBRACKET)
 #define RCTLBR RCTL_T(KC_RBRACKET)
@@ -27,7 +30,7 @@ extern keymap_config_t keymap_config;
 #define _QWERTY 1
 #define _GAME 3
 #define _FN 7
-#define _SYMB 8
+#define _SYM 8
 #define _UTIL 9
 #define _NAV 10
 
@@ -43,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      LCTLBR,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_BSPC,          KC_ENT,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, RCTLBR,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LALT, KC_LSPO, SYM_SPC,                   T_NAV,   KC_RSPC, KC_RGUI
+                                    S_SYM,   KC_LSPO, ALT_SPC,                   T_NAV,   KC_RSPC, KC_RGUI
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -89,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
-    [_SYMB] = LAYOUT(
+    [_SYM] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -99,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UNDS, KC_EQL,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______, _______,                   KC_DEL,  _______, _______
+                                    _______, _______, KC_SPC,                    KC_DEL,  _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -126,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, XXXXXXX, KC_WH_L, XXXXXXX, KC_WH_R, XXXXXXX, KC_DEL,           _______, XXXXXXX, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______, KC_SPC,                    S_NAV,   _______, _______
+                                    _______, _______, _______,                    S_NAV,   _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   )
 };
