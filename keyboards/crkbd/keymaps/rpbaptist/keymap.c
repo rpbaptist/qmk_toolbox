@@ -61,6 +61,9 @@ extern uint8_t is_master;
 #define KC_LVAI  RGB_VAI
 #define KC_LVAD  RGB_VAD
 #define KC_LSMOD RGB_SMOD
+#define KC_LFMOD  RGB_MOD
+#define KC_LRMOD  RGB_RMOD
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAKDHM] = LAYOUT_kc( \
@@ -127,9 +130,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
     RESET, COLEMAK,GAME, QWERTY, XXXXX, XXXXX,                      F1,    F2,    F3,    F4,    F5, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-   XXXXX,RGB_HUI,RGB_SAI,RGB_VAI,RGB_MOD,RGB_TOG,                   F6,    F7,    F8,    F9,   F10, _____,\
+      XXXXX,  LHUI,  LSAI,  LVAI, LFMOD, LTOG,                      F6,    F7,    F8,    F9,   F10, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-   _____,RGB_HUI,RGB_SAD,RGB_VAD,RGB_RMOD,XXXXX,                   F11,   F12, XXXXX, XXXXX, XXXXX, _____,\
+      _____,  LHUD,  LSAD,  LVAD, LRMOD, XXXXX,                    F11,   F12, XXXXX, XXXXX, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____,   SPC,      ENT, _____, _____ \
                               //`--------------------'  `--------------------'
