@@ -17,8 +17,8 @@ extern rgblight_config_t rgblight_config;
 
 extern uint8_t is_master;
 
-#define COLEMAK TO(0)
-#define QWERTY TO(1)
+#define CLMK TO(0)
+#define QWERT TO(1)
 #define GAME TO(3)
 
 #define T_NAV TT(10)
@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FN] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-    RESET, COLEMAK,GAME, QWERTY, XXXXX, XXXXX,                      F1,    F2,    F3,    F4,    F5, XXXXX,\
+      RESET,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                     F1,    F2,    F3,    F4,    F5, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       XXXXX,  LHUI,  LSAI,  LVAI, LFMOD, LTOG,                      F6,    F7,    F8,    F9,   F10, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_UTIL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      _____,  MSTP,  VOLU,  MNXT, XXXXX, XXXXX,                  XXXXX,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,,\
+      _____,  MSTP,  VOLU,  MNXT, XXXXX, XXXXX,                  XXXXX,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____,  MPRV,  VOLD,  MPLY, XXXXX, XXXXX,                   KP_0,  KP_4,  KP_5,  KP_6,  MINS,  PLUS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
