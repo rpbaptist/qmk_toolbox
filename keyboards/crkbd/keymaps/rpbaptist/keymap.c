@@ -26,6 +26,8 @@ extern uint8_t is_master;
 #define FN_ESC LT(_FN, KC_ESC)
 #define UT_TAB LT(_UTIL, KC_TAB)
 
+#define SH_BS LSFT_T(KC_BSPC)
+
 #define LCTLBR LCTL_T(KC_LBRACKET)
 #define RCTLBR RCTL_T(KC_RBRACKET)
 
@@ -65,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      LCTLBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTLBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                    LALT, LSPO,SYM_SP,   NV_ENT,  RSPC,  RGUI \
+                                   LALT, SH_BS, SYM_SP,  NV_ENT,  RSPC,  RGUI \
                               //`--------------------'  `--------------------'
   ),
 
@@ -99,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LBRC, _____, _____, _____, _____, _____,                  _____, _____, _____,  UNDS,   EQL,  RBRC,\
+      _____, _____, _____,  LCBR,  LBRC,  LPRN,                   RPRN,  RBRC,  RCBR,  UNDS,   EQL, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____, _____,      DEL, _____, _____ \
                               //`--------------------'  `--------------------'
