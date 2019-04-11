@@ -21,12 +21,16 @@ extern uint8_t is_master;
 #define QWERTY TO(1)
 #define GAME TO(3)
 
+#define T_NAV TT(10)
+#define S_NAV MO(10)
+
 #define SYM_SP LT(_SYM, KC_SPC)
 #define NV_ENT LT(_NAV, KC_ENT)
 #define FN_ESC LT(_FN, KC_ESC)
 #define UT_TAB LT(_UTIL, KC_TAB)
 
 #define SH_BS LSFT_T(KC_BSPC)
+#define SH_ENT RSFT_T(KC_ENT)
 
 #define LCTLBR LCTL_T(KC_LBRACKET)
 #define RCTLBR RCTL_T(KC_RBRACKET)
@@ -67,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      LCTLBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTLBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LALT, SH_BS, SYM_SP,  NV_ENT,  RSPC,  RGUI \
+                                   LALT, SH_BS, SYM_SP,   S_NAV, SH_ENT, RGUI \
                               //`--------------------'  `--------------------'
   ),
 
@@ -115,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____,  BSPC,    _____, _____, _____ \
+                                  _____, _____,  BSPC,    T_NAV, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
