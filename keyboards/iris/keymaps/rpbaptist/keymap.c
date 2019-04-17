@@ -20,8 +20,8 @@ extern keymap_config_t keymap_config;
 
 #define ALT_SPC LALT_T(KC_SPC)
 
-#define LCTLBR LCTL_T(KC_LBRACKET)
-#define RCTLBR RCTL_T(KC_RBRACKET)
+#define LCTBR LCTL_T(KC_LBRACKET)
+#define RCTBR RCTL_T(KC_RBRACKET)
 
 #define RCTLENT RCTL_T(KC_ENT)
 
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      UT_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                               KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_BSPC,          KC_ENT,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, RCTLENT,
+      LCTBR,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_BSPC,          KC_ENT,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, RCTBR,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     KC_LALT, KC_LSPO, SYM_SPC,                   T_NAV,   KC_RSPC, KC_RGUI
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
