@@ -20,6 +20,9 @@ extern keymap_config_t keymap_config;
 
 #define ALT_SPC LALT_T(KC_SPC)
 
+#define ALT_TAB LALT(KC_TAB)
+#define ALT_SFT LALT(KC_LSFT)
+
 #define LCTBR LCTL_T(KC_LBRACKET)
 #define RCTBR RCTL_T(KC_RBRACKET)
 
@@ -102,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_PLUS, KC_PIPE,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_LCBR, XXXXXXX,          XXXXXXX, KC_RCBR, KC_RBRC, XXXXXXX, KC_UNDS, KC_EQL,  _______,
+     _______, XXXXXXX, XXXXXXX, XXXXXXX, ALT_SFT, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UNDS, KC_EQL,  _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, KC_SPC,                    KC_DEL,  _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
