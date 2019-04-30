@@ -32,6 +32,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define USE_SERIAL_PD2
 
+#define NO_ACTION_ONESHOT
+#define NO_ACTION_MACRO
+
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 12
@@ -39,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SAT_STEP 16
 #define RGBLIGHT_VAL_STEP 16
 
-#define TAPPING_TERM 90
+#define TAPPING_TERM 125
 // #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
 
