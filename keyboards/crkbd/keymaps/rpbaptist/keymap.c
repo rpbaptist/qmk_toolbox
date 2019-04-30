@@ -239,6 +239,43 @@ const char* read_layer_state(void) {
     return layer_state_str;
 }
 
+// const char *read_layer_state(void) {
+//   static char layer_state_str[24];
+//   char layer_name[17];
+
+//   switch (biton32(layer_state)) {
+//     case _UTIL:
+//       strcpy(layer_name, "Utility");
+//       break;
+//     case _FN:
+//       strcpy(layer_name, "Function");
+//       break;
+//     case _NAV:
+//       strcpy(layer_name, "Navigation");
+//       break;
+//     case _SYM:
+//       strcpy(layer_name, "Symbol");
+//       break;
+//     case _QWERTY:
+//       strcpy(layer_name, "QWERT");
+//       break;
+//     case _COLEMAKDHM:
+//       strcpy(layer_name, "Colemak DH");
+//       break;
+//     case _GAME:
+//       strcpy(layer_name, "Gam");
+//       break;
+//     default:
+//       snprintf(layer_name, sizeof(layer_name), "Undef-%ld", layer_state);
+//   }
+
+//   strcpy(layer_state_str, "Layer: ");
+
+//   strcat(layer_state_str, layer_name);
+//   strcat(layer_state_str, "\n");
+//   return layer_state_str;
+// }
+
 
 void matrix_scan_user(void) {
    iota_gfx_task();
