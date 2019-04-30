@@ -10,10 +10,10 @@
 
 extern keymap_config_t keymap_config;
 
-#ifdef RGBLIGHT_ENABLE
+// #ifdef RGBLIGHT_ENABLE
 //Following line allows macro to read current RGB settings
-extern rgblight_config_t rgblight_config;
-#endif
+// extern rgblight_config_t rgblight_config;
+// #endif
 
 extern uint8_t is_master;
 
@@ -195,16 +195,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef SSD1306OLED
 
 // When add source files to SRC in rules.mk, you can use functions.
-const char *read_layer_state(void);
 const char *read_logo(void);
-void set_keylog(uint16_t keycode, keyrecord_t *record);
-const char *read_keylog(void);
-const char *read_keylogs(void);
+char layer_state_str[24];
+
+// void set_keylog(uint16_t keycode, keyrecord_t *record);
+// const char *read_keylog(void);
+// const char *read_keylogs(void);
 
 // const char *read_mode_icon(bool swap);
 // const char *read_host_led_state(void);
 // void set_timelog(void);
 // const char *read_timelog(void);
+
+const char* read_layer_state(void) {
+  switch (biton32(layer_state)) {
+    case _UTIL:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Utility ");
+      break;
+    case _FN:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function ");
+      break;
+    case _NAV:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Navigation ");
+      break;
+    case _SYM:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Symbol ");
+      break;
+    default:
+      switch (biton32(default_layer_state)) {
+        case _QWERTY:
+          snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY ");
+          break;
+        case _COLEMAKDHM:
+          snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Colemak DHm ");
+          break;
+        case _GAME:
+          snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Game ");
+          break;
+      }
+      break;
+  }
+
+    return layer_state_str;
+}
+
 
 void matrix_scan_user(void) {
    iota_gfx_task();
@@ -214,8 +248,8 @@ void matrix_render_user(struct CharacterMatrix *matrix) {
   if (is_master) {
     // If you want to change the display of OLED, you need to change here
     matrix_write_ln(matrix, read_layer_state());
-    matrix_write_ln(matrix, read_keylog());
-    matrix_write_ln(matrix, read_keylogs());
+    // matrix_write_ln(matrix, read_keylog());
+    // matrix_write_ln(matrix, read_keylogs());
     //matrix_write_ln(matrix, read_mode_icon(keymap_config.swap_lalt_lgui));
     //matrix_write_ln(matrix, read_host_led_state());
     //matrix_write_ln(matrix, read_timelog());
