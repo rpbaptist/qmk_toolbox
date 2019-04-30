@@ -145,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,  WH_U,TABBCK,  MS_U,TABFWD,  BTN2,                   PGUP,  HOME,    UP,   END, XXXXX,   DEL,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       TILD,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   CIRC,  PGDN,  LEFT,  DOWN,  RGHT, XXXXX,\
+       TILD,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   PGDN,  LEFT,  DOWN,  RGHT, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -155,9 +155,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FN] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        RST,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                     F1,    F2,    F3,    F4,    F5, XXXXX,\
+      _____,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                     F1,    F2,    F3,    F4,    F5, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX,  LHUI,  LSAI,  LVAI, LFMOD, LTOG,                      F6,    F7,    F8,    F9,   F10, _____,\
+        RST,  LHUI,  LSAI,  LVAI, LFMOD, LTOG,                      F6,    F7,    F8,    F9,   F10, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____,  LHUD,  LSAD,  LVAD, LRMOD, XXXXX,                    F11,   F12, XXXXX, XXXXX, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
