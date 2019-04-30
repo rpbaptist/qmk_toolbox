@@ -219,22 +219,19 @@ const char* read_layer_state(void) {
     case _SYM:
       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Symbol ");
       break;
-    default:
-      switch (biton32(default_layer_state)) {
-        case _QWERTY:
-          snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY ");
-          break;
-        case _COLEMAKDHM:
-          snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Colemak DHm ");
-          break;
-        case _GAME:
-          snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Game ");
-          break;
-      }
+    case _QWERTY:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY ");
       break;
+    case _COLEMAKDHM:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Colemak DHm ");
+      break;
+    case _GAME:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Game ");
+      break;
+    default:
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state);
   }
-
-    return layer_state_str;
+  return layer_state_str;
 }
 
 // const char *read_layer_state(void) {
