@@ -190,6 +190,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+void matrix_init_keymap(void) {
+  //SSD1306 OLED init, make sure to add #define SSD1306OLED in config.h
+  #ifdef SSD1306OLED
+    iota_gfx_init(!has_usb());   // turns on the display
+  #endif
+ }
+
 
 //SSD1306 OLED update loop, make sure to add #define SSD1306OLED in config.h
 #ifdef SSD1306OLED
@@ -197,15 +204,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // When add source files to SRC in rules.mk, you can use functions.
 const char *read_logo(void);
 char layer_state_str[24];
-
-// void set_keylog(uint16_t keycode, keyrecord_t *record);
-// const char *read_keylog(void);
-// const char *read_keylogs(void);
-
-// const char *read_mode_icon(bool swap);
-// const char *read_host_led_state(void);
-// void set_timelog(void);
-// const char *read_timelog(void);
 
 const char* read_layer_state(void) {
   switch (biton32(layer_state)) {
@@ -283,14 +281,8 @@ void matrix_scan_user(void) {
 
 void matrix_render_user(struct CharacterMatrix *matrix) {
   if (is_master) {
-    // If you want to change the display of OLED, you need to change here
     matrix_write_ln(matrix, read_layer_state());
-    // matrix_write_ln(matrix, read_keylog());
-    // matrix_write_ln(matrix, read_keylogs());
-    //matrix_write_ln(matrix, read_mode_icon(keymap_config.swap_lalt_lgui));
-    //matrix_write_ln(matrix, read_host_led_state());
-    //matrix_write_ln(matrix, read_timelog());
-  } else {
+   } else {
     matrix_write(matrix, read_logo());
   }
 }
