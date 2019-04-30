@@ -203,73 +203,73 @@ void matrix_init_keymap(void) {
 
 // When add source files to SRC in rules.mk, you can use functions.
 const char *read_logo(void);
-char layer_state_str[24];
+// char layer_state_str[24];
 
-const char* read_layer_state(void) {
-  switch (biton32(layer_state)) {
-    case _UTIL:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Utility ");
-      break;
-    case _FN:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function ");
-      break;
-    case _NAV:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Navigation ");
-      break;
-    case _SYM:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Symbol ");
-      break;
-    case _QWERTY:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY ");
-      break;
-    case _COLEMAKDHM:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Colemak DHm ");
-      break;
-    case _GAME:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Game ");
-      break;
-    default:
-      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state);
-  }
-  return layer_state_str;
-}
-
-// const char *read_layer_state(void) {
-//   static char layer_state_str[24];
-//   char layer_name[17];
-
+// const char* read_layer_state(void) {
 //   switch (biton32(layer_state)) {
 //     case _UTIL:
-//       strcpy(layer_name, "Utility");
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Utility ");
 //       break;
 //     case _FN:
-//       strcpy(layer_name, "Function");
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function ");
 //       break;
 //     case _NAV:
-//       strcpy(layer_name, "Navigation");
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Navigation ");
 //       break;
 //     case _SYM:
-//       strcpy(layer_name, "Symbol");
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Symbol ");
 //       break;
 //     case _QWERTY:
-//       strcpy(layer_name, "QWERT");
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY ");
 //       break;
 //     case _COLEMAKDHM:
-//       strcpy(layer_name, "Colemak DH");
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Colemak DHm ");
 //       break;
 //     case _GAME:
-//       strcpy(layer_name, "Gam");
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Game ");
 //       break;
 //     default:
-//       snprintf(layer_name, sizeof(layer_name), "Undef-%ld", layer_state);
+//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state);
 //   }
-
-//   strcpy(layer_state_str, "Layer: ");
-
-//   strcat(layer_state_str, layer_name);
-//   strcat(layer_state_str, "\n");
 //   return layer_state_str;
 // }
+
+const char *read_layer_state(void) {
+  static char layer_state_str[24];
+  char layer_name[17];
+
+  switch (biton32(layer_state)) {
+    case _UTIL:
+      strcpy(layer_name, "Utility");
+      break;
+    case _FN:
+      strcpy(layer_name, "Function");
+      break;
+    case _NAV:
+      strcpy(layer_name, "Navigation");
+      break;
+    case _SYM:
+      strcpy(layer_name, "Symbol");
+      break;
+    case _QWERTY:
+      strcpy(layer_name, "QWERT");
+      break;
+    case _COLEMAKDHM:
+      strcpy(layer_name, "Colemak DH");
+      break;
+    case _GAME:
+      strcpy(layer_name, "Gaming");
+      break;
+    default:
+      snprintf(layer_name, sizeof(layer_name), "Undef-%ld", layer_state);
+  }
+
+  strcpy(layer_state_str, "Layer: ");
+
+  strcat(layer_state_str, layer_name);
+  strcat(layer_state_str, "\n");
+  return layer_state_str;
+}
 
 
 void matrix_scan_user(void) {
