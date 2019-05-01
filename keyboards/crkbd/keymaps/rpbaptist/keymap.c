@@ -21,7 +21,6 @@ extern uint8_t is_master;
 #define KC_QWERT TO(1)
 #define KC_GAME TO(3)
 
-#define KC_SYM_BS LT(_SYM, KC_BSPC)
 #define KC_SYMINS LT(_SYM, KC_MINS)
 
 #define KC_SYM_SP LT(_SYM, KC_SPC)
@@ -32,6 +31,7 @@ extern uint8_t is_master;
 #define KC_LCTBR LCTL_T(KC_LBRACKET)
 #define KC_RCTBR RCTL_T(KC_RBRACKET)
 #define KC_ALSPC LALT_T(KC_SPC)
+#define KC_GUIPLS RGUI_T(KC_PLUS)
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       LCTBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 SYMINS,  LSPO, ALSPC,   NV_ENT, RSPC, RGUI \
+                                 SYMINS,  LSPO, ALSPC,   NV_ENT, RSPC, GUIPLS \
                               //`--------------------'  `--------------------'
   ),
 
@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LCTL, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____,  RCTL,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, LSFT,  _____,    _____,   RSFT, _____ \
+                                  _____, LSFT,  _____,    _____,  RSFT, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____, _____,      DEL, _____, ALGUI \
+                                  _____, _____, _____,      DEL, _____,  RGUI \
                               //`--------------------'  `--------------------'
   ),
 
