@@ -17,26 +17,27 @@ extern keymap_config_t keymap_config;
 
 extern uint8_t is_master;
 
+#define _FN 7
+#define _SYM 8
+#define _UTIL 9
+#define _NAV 10
+#define _TEMPLATE 16
+
 #define KC_CLMK TO(0)
 #define KC_QWERT TO(1)
 #define KC_GAME TO(3)
+
+#define KC_T_SYM TT(8)
+#define KC_S_SYM MO(8)
 
 #define KC_NV_ENT LT(_NAV, KC_ENT)
 #define KC_FN_ESC LT(_FN, KC_ESC)
 #define KC_UT_TAB LT(_UTIL, KC_TAB)
 
-// #define KC_LCTBR LCTL_T(KC_LBRACKET)
-// #define KC_RCTBR RCTL_T(KC_RBRACKET)
-
-
-#define KC_CTLSLS RCTL_T(KC_BSLS)
-#define KC_CTLMIN LCTL_T(KC_MINS)
-
-#define KC_SYMLBR LT(_SYM, KC_LBRACKET)
-#define KC_GUIRBR RGUI_T(KC_RBRACKET)
+#define KC_LCTBR LCTL_T(KC_LBRACKET)
+#define KC_RCTBR RCTL_T(KC_RBRACKET)
 
 #define KC_ALSPC LALT_T(KC_SPC)
-
 #define KC_ALSFT LALT(KC_LSFT)
 
 #define KC_TABFWD LCTL(KC_TAB)
@@ -45,12 +46,6 @@ extern uint8_t is_master;
 #define _COLEMAKDHM 0
 #define _QWERTY 1
 #define _GAME 3
-
-#define _FN 7
-#define _SYM 8
-#define _UTIL 9
-#define _NAV 10
-#define _TEMPLATE 16
 
 #define KC______ KC_TRNS
 #define KC_XXXXX KC_NO
@@ -76,9 +71,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      UT_TAB,     A,     R,     S,     T,     G,                      M,     N,     E,     I,     O,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-     CTLMIN,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, CTLSLS,\
+      LCTBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 SYMLBR,  LSPO, ALSPC,   NV_ENT,  RSPC, GUIRBR \
+                                  T_SYM,  LSPO, ALSPC,   NV_ENT,  RSPC,  RGUI \
                               //`--------------------'  `--------------------'
   ),
 
@@ -108,13 +103,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYM] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, _____,\
+        GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSLS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  PLUS,  EQL,  _____,\
+       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____, _____, _____, _____,\
+      _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____, _____,      DEL, _____, RGUI \
+                                  S_SYM, _____, _____,      DEL, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -125,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        TILD,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   PGDN,  LEFT,  DOWN,  RGHT, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
-  //|------+------+------+------+------+------+------|  |------+------+------+------+------+-----+-R-----|
+  //|------+------+------+------+------+------+------|  |------+------+------+------+------+-----+-------|
                                    MINS, _____, _____,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
