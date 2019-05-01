@@ -38,7 +38,6 @@ extern uint8_t is_master;
 #define KC_RCTBR RCTL_T(KC_RBRACKET)
 
 #define KC_ALSPC LALT_T(KC_SPC)
-#define KC_ALSFT LALT(KC_LSFT)
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
@@ -107,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
+      _____, _____, _____, _____, _____, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   S_SYM, _____, _____,      DEL, _____, _____ \
                               //`--------------------'  `--------------------'
@@ -175,73 +174,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // When add source files to SRC in rules.mk, you can use functions.
 const char *read_logo(void);
-// char layer_state_str[24];
-
-// const char* read_layer_state(void) {
-//   switch (biton32(layer_state)) {
-//     case _UTIL:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Utility ");
-//       break;
-//     case _FN:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function ");
-//       break;
-//     case _NAV:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Navigation ");
-//       break;
-//     case _SYM:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Symbol ");
-//       break;
-//     case _QWERTY:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY ");
-//       break;
-//     case _COLEMAKDHM:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Colemak DHm ");
-//       break;
-//     case _GAME:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Game ");
-//       break;
-//     default:
-//       snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state);
-//   }
-//   return layer_state_str;
-// }
-
-// const char *read_layer_state(void) {
-//   static char layer_state_str[24];
-//   char layer_name[17];
-
-//   switch (biton32(layer_state)) {
-//     case _UTIL:
-//       strcpy(layer_name, "Utility");
-//       break;
-//     case _FN:
-//       strcpy(layer_name, "Function");
-//       break;
-//     case _NAV:
-//       strcpy(layer_name, "Navigation");
-//       break;
-//     case _SYM:
-//       strcpy(layer_name, "Symbol");
-//       break;
-//     case _QWERTY:
-//       strcpy(layer_name, "QWERT");
-//       break;
-//     case _COLEMAKDHM:
-//       strcpy(layer_name, "Colemak DH");
-//       break;
-//     case _GAME:
-//       strcpy(layer_name, "Gaming");
-//       break;
-//     default:
-//       snprintf(layer_name, sizeof(layer_name), "Undef-%ld", layer_state);
-//   }
-
-//   strcpy(layer_state_str, "Layer: ");
-
-//   strcat(layer_state_str, layer_name);
-//   strcat(layer_state_str, "\n");
-//   return layer_state_str;
-// }
 
 char matrix_line_str[24];
 
