@@ -27,17 +27,17 @@ extern uint8_t is_master;
 #define KC_QWERT TO(1)
 #define KC_GAME TO(3)
 
-#define KC_T_SYM TT(8)
-#define KC_S_SYM MO(8)
-
 #define KC_NV_ENT LT(_NAV, KC_ENT)
 #define KC_FN_ESC LT(_FN, KC_ESC)
 #define KC_UT_TAB LT(_UTIL, KC_TAB)
+#define KC_SYMMIN LT(_SYM, KC_MINS)
 
 #define KC_LCTBR LCTL_T(KC_LBRACKET)
 #define KC_RCTBR RCTL_T(KC_RBRACKET)
 
 #define KC_ALSPC LALT_T(KC_SPC)
+
+#define KC_ALSFT LALT(KC_LSFT)
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       LCTBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  T_SYM,  LSPO, ALSPC,   NV_ENT,  RSPC,  RGUI \
+                                  SYMMIN,  LSPO, ALSPC,   NV_ENT,  RSPC,  RGUI \
                               //`--------------------'  `--------------------'
   ),
 
@@ -104,11 +104,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSLS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
+       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  PLUS,   EQL, PIPE,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, _____, _____, _____, _____, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
+      _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  S_SYM, _____,  LALT,      DEL, _____, _____ \
+                                  _____, _____,  LALT,      DEL, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
