@@ -17,35 +17,22 @@ extern keymap_config_t keymap_config;
 
 extern uint8_t is_master;
 
-#define CLMK TO(0)
-#define QWERT TO(1)
-#define GAME TO(3)
+#define KC_CLMK TO(0)
+#define KC_QWERT TO(1)
+#define KC_GAME TO(3)
 
-#define T_NAV TT(10)
-#define S_NAV MO(10)
+#define KC_SYM_SP LT(_SYM, KC_SPC)
+#define KC_NV_ENT LT(_NAV, KC_ENT)
+#define KC_FN_ESC LT(_FN, KC_ESC)
+#define KC_UT_TAB LT(_UTIL, KC_TAB)
 
-#define SYM_SP LT(_SYM, KC_SPC)
-#define NV_ENT LT(_NAV, KC_ENT)
-#define FN_ESC LT(_FN, KC_ESC)
-#define UT_TAB LT(_UTIL, KC_TAB)
+#define KC_LCTBR LCTL_T(KC_LBRACKET)
+#define KC_RCTBR RCTL_T(KC_RBRACKET)
 
-#define SH_BS LSFT_T(KC_BSPC)
-#define SH_ENT RSFT_T(KC_ENT)
+#define KC_TABFWD LCTL(KC_TAB)
+#define KC_TABBCK LCTL(LSFT(KC_TAB))
 
-
-#define LCTBR LCTL_T(KC_LBRACKET)
-#define RCTBR RCTL_T(KC_RBRACKET)
-
-#define RCTLENT RCTL_T(KC_ENT)
-
-#define TABFWD LCTL(KC_TAB)
-#define TABBCK LCTL(LSFT(KC_TAB))
-
-#define ALT_TAB LALT(KC_TAB)
-#define ALT_SFT LALT(KC_LSFT)
-
-#define KC_ALTAB ALT_TAB
-#define KC_ALSFT ALT_SFT
+#define KC_ALSFT LALT(KC_LSFT)
 
 #define _COLEMAKDHM 0
 #define _QWERTY 1
@@ -73,24 +60,6 @@ extern uint8_t is_master;
 #define KC_LSMOD RGB_SMOD
 #define KC_LFMOD  RGB_MOD
 #define KC_LRMOD  RGB_RMOD
-
-#define KC_CLMK  CLMK
-#define KC_QWERT  QWERT
-#define KC_GAME  GAME
-
-#define KC_T_NAV T_NAV
-#define KC_S_NAV S_NAV
-
-#define KC_SYM_SP SYM_SP
-#define KC_NV_ENT NV_ENT
-#define KC_FN_ESC FN_ESC
-#define KC_UT_TAB UT_TAB
-
-#define KC_TABFWD TABFWD
-#define KC_TABBCK TABBCK
-
-#define KC_LCTBR LCTBR
-#define KC_RCTBR RCTBR
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAKDHM] = LAYOUT_kc( \
@@ -149,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____,  SPC,    T_NAV, _____, _____ \
+                                  _____, _____,   SPC,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
