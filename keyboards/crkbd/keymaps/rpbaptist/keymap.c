@@ -21,6 +21,8 @@ extern uint8_t is_master;
 #define KC_QWERT TO(1)
 #define KC_GAME TO(3)
 
+#define KC_SYM_BS LT(_SYM, KC_BSPC)
+
 #define KC_SYM_SP LT(_SYM, KC_SPC)
 #define KC_NV_ENT LT(_NAV, KC_ENT)
 #define KC_FN_ESC LT(_FN, KC_ESC)
@@ -28,11 +30,13 @@ extern uint8_t is_master;
 
 #define KC_LCTBR LCTL_T(KC_LBRACKET)
 #define KC_RCTBR RCTL_T(KC_RBRACKET)
+#define KC_ALSPC LALT_T(KC_SPC)
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
 
 #define KC_ALSFT LALT(KC_LSFT)
+#define KC_ALGUI LALT(KC_RGUI)
 
 #define _COLEMAKDHM 0
 #define _QWERTY 1
@@ -70,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       LCTBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LALT,  LSPO, SYM_SP,   NV_ENT, RSPC, RGUI \
+                                 SYM_BS,  LSPO, ALSPC,   NV_ENT, RSPC, RGUI \
                               //`--------------------'  `--------------------'
   ),
 
@@ -106,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____, _____,      DEL, _____, _____ \
+                                  _____, _____, _____,      DEL, _____, ALGUI \
                               //`--------------------'  `--------------------'
   ),
 
@@ -118,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____,   SPC,    _____, _____, _____ \
+                                   LALT, _____,   SPC,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
