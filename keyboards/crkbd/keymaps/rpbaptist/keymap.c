@@ -43,11 +43,8 @@ extern uint8_t is_master;
 
 #define KC_RGUI LALT(KC_RGUI)
 
-#define KC_CTLENT RCTL_T(KC_ENT)
-#define KC_CTLMIN RCTL_T(KC_MINS)
-
-#define KC_CTLBSP RCTL_T(KC_BSPC)
-#define KC_CTLDEL RCTL_T(KC_DEL)
+#define KC_CTLSLS RCTL_T(KC_BSLS)
+#define KC_CTLMIN LCTL_T(KC_MINS)
 
 #define _COLEMAKDHM 0
 #define _QWERTY 1
@@ -79,11 +76,11 @@ extern uint8_t is_master;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAKDHM] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-     FN_ESC,     Q,     W,     F,     P,     B,                      J,     L,    U,     Y,   SCLN,  BSLS,\
+     FN_ESC,     Q,     W,     F,     P,     B,                      J,     L,    U,     Y,   SCLN,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      UT_TAB,     A,     R,     S,     T,     G,                      M,     N,     E,     I,     O,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+---~---+------+------|
-     CTLBSP,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, CTLMIN,\
+     CTLMIN,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, CTLSLS,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   SYMLB,  LSPO, ALSPC,   NV_ENT,  RSPC, GUIRB \
                               //`--------------------'  `--------------------'
@@ -117,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS, _____,\
+       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  PLUS,  EQL, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
+      _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____, _____,      DEL, _____,  GUIBR \
+                                  _____, _____, _____,      DEL, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -131,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        TILD,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   PGDN,  LEFT,  DOWN,  RGHT, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-     CTLDEL, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
+      _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                    MINS, _____, _____,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
