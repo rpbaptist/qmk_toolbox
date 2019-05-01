@@ -31,7 +31,7 @@ extern uint8_t is_master;
 #define KC_LCTBR LCTL_T(KC_LBRACKET)
 #define KC_RCTBR RCTL_T(KC_RBRACKET)
 #define KC_ALSPC LALT_T(KC_SPC)
-#define KC_GUIPLS RGUI_T(KC_PLUS)
+#define KC_GUIBLS RGUI_T(KC_BSLS)
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
@@ -72,10 +72,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      FN_ESC,     Q,     W,     F,     P,     B,                      J,     L,    U,     Y,   SCLN,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      UT_TAB,     A,     R,     S,     T,     G,                      M,     N,     E,     I,     O,  QUOT,\
-  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
+  //|------+------+------+------+------+------|                |------+------+------+---~---+------+------|
       LCTBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                 SYMINS,  LSPO, ALSPC,   NV_ENT, RSPC, GUIPLS \
+                                 SYMINS,  LSPO, ALSPC,   NV_ENT, RSPC, GUIBLS \
                               //`--------------------'  `--------------------'
   ),
 
@@ -105,9 +105,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYM] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSLS,\
+        GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR, _____, _____,  PIPE,\
+       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  PLUS,   EQL, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, _____, _____, _____, ALSFT, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
