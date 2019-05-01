@@ -27,18 +27,19 @@ extern uint8_t is_master;
 #define KC_QWERT TO(1)
 #define KC_GAME TO(3)
 
-#define KC_T_SYM TT(8)
-#define KC_S_SYM MO(8)
+// #define KC_T_SYM TT(8)
+// #define KC_S_SYM MO(8)
 
 #define KC_NV_ENT LT(_NAV, KC_ENT)
 #define KC_FN_ESC LT(_FN, KC_ESC)
-#define KC_FN_GRV LT(_FN, KC_GRV)
 #define KC_UT_TAB LT(_UTIL, KC_TAB)
+#define KC_SYMSPC LT(_SYM, KC_SPC)
 
 #define KC_LCTBR LCTL_T(KC_LBRACKET)
 #define KC_RCTBR RCTL_T(KC_RBRACKET)
 
-#define KC_ALSPC LALT_T(KC_SPC)
+// #define KC_ALSPC LALT_T(KC_SPC)
+#define KC_ALTSF LALT(KC_LSFT)
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
@@ -67,13 +68,13 @@ extern uint8_t is_master;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAKDHM] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-     FN_GRV,     Q,     W,     F,     P,     B,                      J,     L,    U,     Y,   SCLN,  BSPC,\
+     FN_ESC,     Q,     W,     F,     P,     B,                      J,     L,    U,     Y,   SCLN,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      UT_TAB,     A,     R,     S,     T,     G,                      M,     N,     E,     I,     O,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       LCTBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTBR,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  T_SYM,  LSPO, ALSPC,   NV_ENT,  RSPC,  RGUI \
+                                   LALT,  LSPO, SYMSPC,  NV_ENT,  RSPC,  RGUI \
                               //`--------------------'  `--------------------'
   ),
 
@@ -103,13 +104,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYM] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSLS,\
+        GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSLS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-        TAB,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
+       TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, _____, _____, _____, _____, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
+      _____, _____, _____, _____, ALTSF, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  S_SYM, _____,  LALT,      DEL, _____, _____ \
+                                  _____, _____, _____,      DEL, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -117,11 +118,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,  WH_U,TABBCK,  MS_U,TABFWD,  BTN2,                   PGUP,  HOME,    UP,   END, XXXXX,   DEL,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-        TAB,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   PGDN,  LEFT,  DOWN,  RGHT, XXXXX, XXXXX,\
+       TILD,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   PGDN,  LEFT,  DOWN,  RGHT, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+-----+-------|
-                                   MINS, _____, _____,    _____, _____, _____ \
+                                  _____, _____,   SPC,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -133,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                  XXXXX, LRMOD,  LHUD,  LSAD,  LVAD, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   MINS, _____, _____,      ENT, _____, _____ \
+                                  _____, _____,   SPC,      ENT, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -145,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX,  KP_1,  KP_2,  KP_3,  PDOT,  EQL,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   MINS, _____, _____,      ENT,  KP_0,  PDOT \
+                                  _____, _____,   SPC,      ENT,  KP_0,  PDOT \
                               //`--------------------'  `--------------------'
   ),
 
