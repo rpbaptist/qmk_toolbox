@@ -23,9 +23,9 @@ extern uint8_t is_master;
 #define _NAV 10
 #define _TEMPLATE 16
 
-#define KC_CLMK TO(0)
-#define KC_QWERT TO(1)
-#define KC_GAME TO(3)
+#define KC_CLMK DF(0)
+#define KC_QWERT DF(1)
+#define KC_GAME DF(3)
 
 // #define KC_T_SYM TT(8)
 // #define KC_S_SYM MO(8)
@@ -261,10 +261,10 @@ void render_crkbd_logo(void) {
 
 
 void render_status(void) {
-  oled_write_P(PSTR("Layout: "), false);
+  // oled_write_P(PSTR("Layout: "), false);
   switch (biton32(default_layer_state)) {
     case _COLEMAKDHM:
-      oled_write_P(PSTR("Colemak"), false);
+      oled_write_P(PSTR("Colemak DHm"), false);
       break;
     case _GAME:
       oled_write_P(PSTR("Gaming"), false);
@@ -274,7 +274,8 @@ void render_status(void) {
       break;
   }
   oled_write_P(PSTR("\n"), false);
-  oled_write_P(PSTR("Layer:  "), false);
+  oled_write_P(PSTR("\n"), false);
+  // oled_write_P(PSTR("Layer:  "), false);
   switch (biton32(layer_state)) {
     case 0:
       oled_write_P(PSTR("Base"), false);
@@ -295,7 +296,8 @@ void render_status(void) {
       oled_write_P(PSTR("Unknown"), false);
       break;
   }
-  oled_write_P(PSTR("\n"), false);
+  // oled_write_P(PSTR("\n"), false);
+  // oled_write_P(PSTR("\n"), false);
 
   // if (keymap_config.swap_lalt_lgui != false) {
   //   oled_write_P(mode_logo[0], false);
@@ -305,11 +307,11 @@ void render_status(void) {
   //   oled_write_P(mode_logo[3], false);
   // }
 
-  uint8_t led_usb_state = host_keyboard_leds();
-  oled_write_P(PSTR("Lock:"), false);
-  oled_write_P(led_usb_state & (1<<USB_LED_NUM_LOCK)    ? PSTR(" NUM ") : PSTR("     "), false);
-  oled_write_P(led_usb_state & (1<<USB_LED_CAPS_LOCK)   ? PSTR(" CAPS") : PSTR("     "), false);
-  oled_write_P(led_usb_state & (1<<USB_LED_SCROLL_LOCK) ? PSTR(" SCRL") : PSTR("     "), false);
+  // uint8_t led_usb_state = host_keyboard_leds();
+  // oled_write_P(PSTR("Lock:"), false);
+  // oled_write_P(led_usb_state & (1<<USB_LED_NUM_LOCK)    ? PSTR(" NUM ") : PSTR("     "), false);
+  // oled_write_P(led_usb_state & (1<<USB_LED_CAPS_LOCK)   ? PSTR(" CAPS") : PSTR("     "), false);
+  // oled_write_P(led_usb_state & (1<<USB_LED_SCROLL_LOCK) ? PSTR(" SCRL") : PSTR("     "), false);
 }
 
 
