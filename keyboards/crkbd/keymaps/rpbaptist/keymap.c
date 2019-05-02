@@ -212,7 +212,7 @@ void render_status(void) {
       oled_write_P(PSTR("Util "), false);
       break;
     case _NAV:
-      oled_write_P(PSTR("Nav "), false);
+      oled_write_P(PSTR("Nav  "), false);
       break;
     default:
       oled_write_P(PSTR("Unkn "), false);
@@ -246,3 +246,4 @@ void oled_task_user(void) {
   }
 }
 #endif
+
