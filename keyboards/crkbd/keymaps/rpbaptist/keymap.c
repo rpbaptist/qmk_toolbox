@@ -242,13 +242,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 #ifdef OLED_DRIVER_ENABLE
-oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (is_master) {
-    return OLED_ROTATION_270;
-  } else {
-    return rotation;
-  }
-}
+// oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+//   if (is_master) {
+//     return OLED_ROTATION_270;
+//   } else {
+//     return rotation;
+//   }
+// }
 
 void render_crkbd_logo(void) {
   static const char PROGMEM crkbd_logo[] = {
@@ -261,7 +261,7 @@ void render_crkbd_logo(void) {
 
 
 void render_status(void) {
-  oled_write_P(PSTR("Layout"), false);
+  oled_write_P(PSTR("Layout: "), false);
   switch (biton32(default_layer_state)) {
     case _COLEMAKDHM:
       oled_write_P(PSTR("Colemak"), false);
@@ -273,8 +273,12 @@ void render_status(void) {
       oled_write_P(PSTR("QWERTY"), false);
       break;
   }
-  oled_write_P(PSTR("Layer"), false);
+  oled_write_P(PSTR("\n"), false);
+  oled_write_P(PSTR("Layer:  "), false);
   switch (biton32(layer_state)) {
+    case 0:
+      oled_write_P(PSTR("Base"), false);
+      break;
     case _FN:
       oled_write_P(PSTR("Function"), false);
       break;
@@ -288,24 +292,18 @@ void render_status(void) {
       oled_write_P(PSTR("Navigation"), false);
       break;
     default:
-      oled_write_P(PSTR("Unkn "), false);
+      oled_write_P(PSTR("Unknown"), false);
       break;
   }
+  oled_write_P(PSTR("\n"), false);
 
-  oled_write_P(PSTR("BTMGK"), false);
-  static const char PROGMEM mode_logo[4][4] = {
-    {0x95,0x96,0x0a,0},
-    {0xb5,0xb6,0x0a,0},
-    {0x97,0x98,0x0a,0},
-    {0xb7,0xb8,0x0a,0} };
-
-  if (keymap_config.swap_lalt_lgui != false) {
-    oled_write_P(mode_logo[0], false);
-    oled_write_P(mode_logo[1], false);
-  } else {
-    oled_write_P(mode_logo[2], false);
-    oled_write_P(mode_logo[3], false);
-  }
+  // if (keymap_config.swap_lalt_lgui != false) {
+  //   oled_write_P(mode_logo[0], false);
+  //   oled_write_P(mode_logo[1], false);
+  // } else {
+  //   oled_write_P(mode_logo[2], false);
+  //   oled_write_P(mode_logo[3], false);
+  // }
 
   uint8_t led_usb_state = host_keyboard_leds();
   oled_write_P(PSTR("Lock:"), false);
