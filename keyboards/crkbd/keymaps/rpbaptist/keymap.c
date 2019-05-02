@@ -195,9 +195,9 @@ void render_status(void) {
       oled_write_P(PSTR("QWERT"), false);
       break;
   }
-  // oled_write_P(PSTR("\n"), false);
+
   oled_write_P(PSTR("\n"), false);
-  // oled_write_P(PSTR("Layer:  "), false);
+
   switch (biton32(layer_state)) {
     case 0:
       oled_write_P(PSTR("     "), false);
