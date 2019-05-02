@@ -172,70 +172,155 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 //SSD1306 OLED update loop, make sure to add #define SSD1306OLED in config.h
-#ifdef SSD1306OLED
+// #ifdef SSD1306OLED
 
-// When add source files to SRC in rules.mk, you can use functions.
-const char *read_logo(void);
+// // When add source files to SRC in rules.mk, you can use functions.
+// const char *read_logo(void);
 
-char matrix_line_str[24];
+// char matrix_line_str[24];
 
-const char *read_layer_state(void) {
-  uint8_t layer = biton32(layer_state);
+// const char *read_layer_state(void) {
+//   uint8_t layer = biton32(layer_state);
 
-  strcpy(matrix_line_str, "Layer: ");
+//   strcpy(matrix_line_str, "Layer: ");
 
-  switch (layer) {
-    case _UTIL:
-      strcat(matrix_line_str, "Utility");
-      break;
-    case _FN:
-      strcat(matrix_line_str, "Function");
-      break;
-    case _NAV:
-      strcat(matrix_line_str, "Navigation");
-      break;
-    case _SYM:
-      strcat(matrix_line_str, "Symbol");
-      break;
-    case _QWERTY:
-      strcat(matrix_line_str, "QWERT");
-      break;
+//   switch (layer) {
+//     case _UTIL:
+//       strcat(matrix_line_str, "Utility");
+//       break;
+//     case _FN:
+//       strcat(matrix_line_str, "Function");
+//       break;
+//     case _NAV:
+//       strcat(matrix_line_str, "Navigation");
+//       break;
+//     case _SYM:
+//       strcat(matrix_line_str, "Symbol");
+//       break;
+//     case _QWERTY:
+//       strcat(matrix_line_str, "QWERT");
+//       break;
+//     case _COLEMAKDHM:
+//       strcat(matrix_line_str, "Colemak DHm");
+//       break;
+//     case _GAME:
+//       strcat(matrix_line_str, "Gaming");
+//       break;
+//     default:
+//       sprintf(matrix_line_str + strlen(matrix_line_str), "Unknown (%d)", layer);
+//   }
+
+//   return matrix_line_str;
+// }
+
+// void matrix_scan_user(void) {
+//    iota_gfx_task();
+// }
+
+// void matrix_render_user(struct CharacterMatrix *matrix) {
+//   if (is_master) {
+//     matrix_write_ln(matrix, read_layer_state());
+//    } else {
+//     matrix_write(matrix, read_logo());
+//   }
+// }
+
+// void matrix_update(struct CharacterMatrix *dest, const struct CharacterMatrix *source) {
+//   if (memcmp(dest->display, source->display, sizeof(dest->display))) {
+//     memcpy(dest->display, source->display, sizeof(dest->display));
+//     dest->dirty = true;
+//   }
+// }
+
+// void iota_gfx_task_user(void) {
+//   struct CharacterMatrix matrix;
+//   matrix_clear(&matrix);
+//   matrix_render_user(&matrix);
+//   matrix_update(&display, &matrix);
+// }
+// #endif//SSD1306OLED
+
+
+#ifdef OLED_DRIVER_ENABLE
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+  if (is_master) {
+    return OLED_ROTATION_270;
+  } else {
+    return rotation;
+  }
+}
+
+void render_crkbd_logo(void) {
+  static const char PROGMEM crkbd_logo[] = {
+      0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f, 0x90, 0x91, 0x92, 0x93, 0x94,
+      0xa0, 0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0xa7, 0xa8, 0xa9, 0xaa, 0xab, 0xac, 0xad, 0xae, 0xaf, 0xb0, 0xb1, 0xb2, 0xb3, 0xb4,
+      0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0xc5, 0xc6, 0xc7, 0xc8, 0xc9, 0xca, 0xcb, 0xcc, 0xcd, 0xce, 0xcf, 0xd0, 0xd1, 0xd2, 0xd3, 0xd4,
+      0};
+  oled_write_P(crkbd_logo, false);
+}
+
+
+void render_status(void) {
+  oled_write_P(PSTR("Layout"), false);
+  switch (biton32(default_layer_state)) {
     case _COLEMAKDHM:
-      strcat(matrix_line_str, "Colemak DHm");
+      oled_write_P(PSTR("Colemak"), false);
       break;
     case _GAME:
-      strcat(matrix_line_str, "Gaming");
+      oled_write_P(PSTR("Gaming"), false);
+      break;
+    case _QWERTY:
+      oled_write_P(PSTR("QWERTY"), false);
+      break;
+  }
+  oled_write_P(PSTR("Layer"), false);
+  switch (biton32(layer_state)) {
+    case _FN:
+      oled_write_P(PSTR("Function"), false);
+      break;
+    case _SYM:
+      oled_write_P(PSTR("Symbol"), false);
+      break;
+    case _UTIL:
+      oled_write_P(PSTR("Utility"), false);
+      break;
+    case _NAV:
+      oled_write_P(PSTR("Navigation"), false);
       break;
     default:
-      sprintf(matrix_line_str + strlen(matrix_line_str), "Unknown (%d)", layer);
+      oled_write_P(PSTR("Unkn "), false);
+      break;
   }
 
-  return matrix_line_str;
+  oled_write_P(PSTR("BTMGK"), false);
+  static const char PROGMEM mode_logo[4][4] = {
+    {0x95,0x96,0x0a,0},
+    {0xb5,0xb6,0x0a,0},
+    {0x97,0x98,0x0a,0},
+    {0xb7,0xb8,0x0a,0} };
+
+  if (keymap_config.swap_lalt_lgui != false) {
+    oled_write_P(mode_logo[0], false);
+    oled_write_P(mode_logo[1], false);
+  } else {
+    oled_write_P(mode_logo[2], false);
+    oled_write_P(mode_logo[3], false);
+  }
+
+  uint8_t led_usb_state = host_keyboard_leds();
+  oled_write_P(PSTR("Lock:"), false);
+  oled_write_P(led_usb_state & (1<<USB_LED_NUM_LOCK)    ? PSTR(" NUM ") : PSTR("     "), false);
+  oled_write_P(led_usb_state & (1<<USB_LED_CAPS_LOCK)   ? PSTR(" CAPS") : PSTR("     "), false);
+  oled_write_P(led_usb_state & (1<<USB_LED_SCROLL_LOCK) ? PSTR(" SCRL") : PSTR("     "), false);
 }
 
-void matrix_scan_user(void) {
-   iota_gfx_task();
-}
 
-void matrix_render_user(struct CharacterMatrix *matrix) {
+void oled_task_user(void) {
   if (is_master) {
-    matrix_write_ln(matrix, read_layer_state());
-   } else {
-    matrix_write(matrix, read_logo());
+    render_status();     // Renders the current keyboard state (layer, lock, caps, scroll, etc)
+  } else {
+    render_crkbd_logo();
+    oled_scroll_left();  // Turns on scrolling
   }
 }
-
-void matrix_update(struct CharacterMatrix *dest, const struct CharacterMatrix *source) {
-  if (memcmp(dest->display, source->display, sizeof(dest->display))) {
-    memcpy(dest->display, source->display, sizeof(dest->display));
-    dest->dirty = true;
-  }
-}
-
-void iota_gfx_task_user(void) {
-  struct CharacterMatrix matrix;
-  matrix_clear(&matrix);
-  matrix_render_user(&matrix);
-  matrix_update(&display, &matrix);
-}
-#endif//SSD1306OLED
+#endif
