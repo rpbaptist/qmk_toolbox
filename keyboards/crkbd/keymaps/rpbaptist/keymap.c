@@ -242,13 +242,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 #ifdef OLED_DRIVER_ENABLE
-// oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-//   if (is_master) {
-//     return OLED_ROTATION_270;
-//   } else {
-//     return rotation;
-//   }
-// }
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+  if (is_master) {
+    return OLED_ROTATION_270;
+  } else {
+    return rotation;
+  }
+}
 
 void render_crkbd_logo(void) {
   static const char PROGMEM crkbd_logo[] = {
@@ -264,46 +264,46 @@ void render_status(void) {
   // oled_write_P(PSTR("Layout: "), false);
   switch (biton32(default_layer_state)) {
     case _COLEMAKDHM:
-      oled_write_P(PSTR("Colemak DHm"), false);
+      oled_write_P(PSTR("COLMK"), false);
       break;
     case _GAME:
-      oled_write_P(PSTR("Gaming     "), false);
+      oled_write_P(PSTR("GAME"), false);
       break;
     case _QWERTY:
-      oled_write_P(PSTR("QWERTY     "), false);
+      oled_write_P(PSTR("QWERT"), false);
       break;
   }
-  oled_write_P(PSTR("\n"), false);
+  // oled_write_P(PSTR("\n"), false);
   oled_write_P(PSTR("\n"), false);
   // oled_write_P(PSTR("Layer:  "), false);
   switch (biton32(layer_state)) {
     case 0:
-      oled_write_P(PSTR("          "), false);
+      oled_write_P(PSTR("     "), false);
       break;
     case _FN:
-      oled_write_P(PSTR("Function  "), false);
+      oled_write_P(PSTR("Funct"), false);
       break;
     case _SYM:
-      oled_write_P(PSTR("Symbol    "), false);
+      oled_write_P(PSTR("Symbl"), false);
       break;
     case _UTIL:
-      oled_write_P(PSTR("Utility   "), false);
+      oled_write_P(PSTR("Util "), false);
       break;
     case _NAV:
-      oled_write_P(PSTR("Navigation"), false);
+      oled_write_P(PSTR("Nav "), false);
       break;
     default:
-      oled_write_P(PSTR("Unknown   "), false);
+      oled_write_P(PSTR("Unkn "), false);
       break;
   }
   oled_write_P(PSTR("\n"), false);
 
-  uint8_t modifiers = get_mods();
+   uint8_t modifiers = get_mods();
 
   oled_write_P( (modifiers & MOD_MASK_CTRL)  ? PSTR("CTRL ") : PSTR("     "), false);
-  oled_write_P( (modifiers & MOD_MASK_GUI)   ? PSTR("GUI  ") : PSTR("     "), false);
-  oled_write_P( (modifiers & MOD_MASK_ALT)   ? PSTR("ALT  ") : PSTR("     "), false);
   oled_write_P( (modifiers & MOD_MASK_SHIFT) ? PSTR("SHIFT") : PSTR("     "), false);
+  oled_write_P( (modifiers & MOD_MASK_ALT)   ? PSTR("ALT  ") : PSTR("     "), false);
+  oled_write_P( (modifiers & MOD_MASK_GUI)   ? PSTR("SUPER") : PSTR("     "), false);
 
   // if (keymap_config.swap_lalt_lgui != false) {
   //   oled_write_P(mode_logo[0], false);
