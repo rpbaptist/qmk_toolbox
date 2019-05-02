@@ -296,8 +296,14 @@ void render_status(void) {
       oled_write_P(PSTR("Unknown   "), false);
       break;
   }
-  // oled_write_P(PSTR("\n"), false);
-  // oled_write_P(PSTR("\n"), false);
+  oled_write_P(PSTR("\n"), false);
+
+  uint8_t modifiers = get_mods();
+
+  oled_write_P( (modifiers & MOD_MASK_CTRL)  ? PSTR("CTRL ") : PSTR("     "), false);
+  oled_write_P( (modifiers & MOD_MASK_GUI)   ? PSTR("GUI  ") : PSTR("     "), false);
+  oled_write_P( (modifiers & MOD_MASK_ALT)   ? PSTR("ALT  ") : PSTR("     "), false);
+  oled_write_P( (modifiers & MOD_MASK_SHIFT) ? PSTR("SHIFT") : PSTR("     "), false);
 
   // if (keymap_config.swap_lalt_lgui != false) {
   //   oled_write_P(mode_logo[0], false);
