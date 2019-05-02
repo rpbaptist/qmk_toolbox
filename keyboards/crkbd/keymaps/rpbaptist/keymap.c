@@ -298,26 +298,20 @@ void render_status(void) {
   }
   oled_write_P(PSTR("\n"), false);
 
-   uint8_t modifiers = get_mods();
+  uint8_t modifiers = get_mods();
 
   oled_write_P( (modifiers & MOD_MASK_CTRL)  ? PSTR("CTRL ") : PSTR("     "), false);
   oled_write_P( (modifiers & MOD_MASK_SHIFT) ? PSTR("SHIFT") : PSTR("     "), false);
   oled_write_P( (modifiers & MOD_MASK_ALT)   ? PSTR("ALT  ") : PSTR("     "), false);
   oled_write_P( (modifiers & MOD_MASK_GUI)   ? PSTR("SUPER") : PSTR("     "), false);
 
-  // if (keymap_config.swap_lalt_lgui != false) {
-  //   oled_write_P(mode_logo[0], false);
-  //   oled_write_P(mode_logo[1], false);
-  // } else {
-  //   oled_write_P(mode_logo[2], false);
-  //   oled_write_P(mode_logo[3], false);
-  // }
+  oled_write_P(PSTR("\n"), false);
 
-  // uint8_t led_usb_state = host_keyboard_leds();
-  // oled_write_P(PSTR("Lock:"), false);
-  // oled_write_P(led_usb_state & (1<<USB_LED_NUM_LOCK)    ? PSTR(" NUM ") : PSTR("     "), false);
-  // oled_write_P(led_usb_state & (1<<USB_LED_CAPS_LOCK)   ? PSTR(" CAPS") : PSTR("     "), false);
-  // oled_write_P(led_usb_state & (1<<USB_LED_SCROLL_LOCK) ? PSTR(" SCRL") : PSTR("     "), false);
+  uint8_t led_usb_state = host_keyboard_leds();
+  oled_write_P(PSTR("Lock:"), false);
+  oled_write_P(led_usb_state & (1<<USB_LED_NUM_LOCK)    ? PSTR(" NUM ") : PSTR("     "), false);
+  oled_write_P(led_usb_state & (1<<USB_LED_CAPS_LOCK)   ? PSTR(" CAPS") : PSTR("     "), false);
+  oled_write_P(led_usb_state & (1<<USB_LED_SCROLL_LOCK) ? PSTR(" SCRL") : PSTR("     "), false);
 }
 
 
