@@ -267,10 +267,10 @@ void render_status(void) {
       oled_write_P(PSTR("Colemak DHm"), false);
       break;
     case _GAME:
-      oled_write_P(PSTR("Gaming"), false);
+      oled_write_P(PSTR("Gaming     "), false);
       break;
     case _QWERTY:
-      oled_write_P(PSTR("QWERTY"), false);
+      oled_write_P(PSTR("QWERTY     "), false);
       break;
   }
   oled_write_P(PSTR("\n"), false);
@@ -278,22 +278,22 @@ void render_status(void) {
   // oled_write_P(PSTR("Layer:  "), false);
   switch (biton32(layer_state)) {
     case 0:
-      oled_write_P(PSTR("Base"), false);
+      oled_write_P(PSTR("Base      "), false);
       break;
     case _FN:
-      oled_write_P(PSTR("Function"), false);
+      oled_write_P(PSTR("Function  "), false);
       break;
     case _SYM:
-      oled_write_P(PSTR("Symbol"), false);
+      oled_write_P(PSTR("Symbol    "), false);
       break;
     case _UTIL:
-      oled_write_P(PSTR("Utility"), false);
+      oled_write_P(PSTR("Utility   "), false);
       break;
     case _NAV:
       oled_write_P(PSTR("Navigation"), false);
       break;
     default:
-      oled_write_P(PSTR("Unknown"), false);
+      oled_write_P(PSTR("Unknown   "), false);
       break;
   }
   // oled_write_P(PSTR("\n"), false);
