@@ -30,6 +30,9 @@ extern uint8_t is_master;
 // #define KC_T_SYM TT(8)
 // #define KC_S_SYM MO(8)
 
+#define KC_T_NAV TT(10)
+#define KC_S_NAV MO(10)
+
 #define KC_NV_ENT LT(_NAV, KC_ENT)
 #define KC_FN_ESC LT(_FN, KC_ESC)
 #define KC_UT_TAB LT(_UTIL, KC_TAB)
@@ -37,6 +40,8 @@ extern uint8_t is_master;
 
 #define KC_LCTBR LCTL_T(KC_LBRACKET)
 #define KC_RCTBR RCTL_T(KC_RBRACKET)
+
+#define KC_GUENT RGUI_T(KC_ENT)
 
 // #define KC_ALSPC LALT_T(KC_SPC)
 #define KC_ALTSF LALT(KC_LSFT)
@@ -72,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      UT_TAB,     A,     R,     S,     T,     G,                      M,     N,     E,     I,     O,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      LCTBR,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH, RCTBR,\
+      LALT,     Z,     X,     C,     D,     V,                      K,     H,  COMM,   DOT,  SLSH,  GUENT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LALT,  LSPO, SYMSPC,  NV_ENT,  RSPC,  RGUI \
+                                  LCTBR,  LSPO, SYMSPC,   T_NAV,  RSPC,  RCTBR \
                               //`--------------------'  `--------------------'
   ),
 
@@ -96,9 +101,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LCTL, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____,  RCTL,\
+      _____, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, LSFT,  _____,    _____,  RSFT, _____ \
+                                   LCTL, LSFT,  _____,    _____,  RSFT,  RCTL \
                               //`--------------------'  `--------------------'
   ),
 
@@ -120,9 +125,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        TILD,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   PGDN,  LEFT,  DOWN,  RGHT, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX, _____,\
+      _____, XXXXX,  WH_L, XXXXX,  WH_R, XXXXX,                  XXXXX,  ACL0,  ACL1,  ACL2, XXXXX,  RGUI,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+-----+-------|
-                                  _____, _____,   SPC,    _____, _____, _____ \
+                                  _____, _____,   SPC,    S_NAV, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
