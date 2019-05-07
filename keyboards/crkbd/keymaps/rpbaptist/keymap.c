@@ -149,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_UTIL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      ESC,   XXXXX,  MSTP,  VOLU,  MNXT, XXXXX,                  XXXXX,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
+      ESC,   XXXXX,  MSTP,  VOLU,  MNXT, XXXXX,                   NLCK,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX,  MPRV,  VOLD,  MPLY, XXXXX,                   PDOT,  KP_4,  KP_5,  KP_6,  MINS,  PLUS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
