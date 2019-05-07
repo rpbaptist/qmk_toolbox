@@ -195,13 +195,13 @@ void render_status(void) {
   // oled_write_P(PSTR("Layout: "), false);
   switch (biton32(default_layer_state)) {
     case _COLEMAKDHM:
-      oled_write_P(PSTR("COLMK"), false);
+      oled_write_P(PSTR("ORBIT"), false);
       break;
     case _GAME:
-      oled_write_P(PSTR("GAME"), false);
+      oled_write_P(PSTR("PULSE"), false);
       break;
     case _QWERTY:
-      oled_write_P(PSTR("QWERT"), false);
+      oled_write_P(PSTR("DELAY"), false);
       break;
   }
 
@@ -212,16 +212,16 @@ void render_status(void) {
       oled_write_P(PSTR("     "), false);
       break;
     case _FN:
-      oled_write_P(PSTR("Funct"), false);
+      oled_write_P(PSTR("Abort"), false);
       break;
     case _SYM:
-      oled_write_P(PSTR("Symbl"), false);
+      oled_write_P(PSTR("Comms"), false);
       break;
     case _UTIL:
-      oled_write_P(PSTR("Util "), false);
+      oled_write_P(PSTR("Stage"), false);
       break;
     case _NAV:
-      oled_write_P(PSTR("Nav  "), false);
+      oled_write_P(PSTR("Gyro "), false);
       break;
     default:
       oled_write_P(PSTR("Unkn "), false);
@@ -239,7 +239,7 @@ void render_status(void) {
   oled_write_P(PSTR("\n"), false);
 
   uint8_t led_usb_state = host_keyboard_leds();
-  oled_write_P(PSTR("Lock:"), false);
+  oled_write_P(PSTR("Mode:\n"), false);
   oled_write_P(led_usb_state & (1<<USB_LED_NUM_LOCK)    ? PSTR(" NUM ") : PSTR("     "), false);
   oled_write_P(led_usb_state & (1<<USB_LED_CAPS_LOCK)   ? PSTR(" CAPS") : PSTR("     "), false);
   oled_write_P(led_usb_state & (1<<USB_LED_SCROLL_LOCK) ? PSTR(" SCRL") : PSTR("     "), false);
