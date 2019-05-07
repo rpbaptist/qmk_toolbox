@@ -55,4 +55,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_MAX_SPEED   4
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 40
 
-#define OLED_FONT_H "keyboards/crkbd/keymaps/drashna/glcdfont.c"
+#define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont.c"
