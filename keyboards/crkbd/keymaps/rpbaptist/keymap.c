@@ -215,7 +215,7 @@ void render_status(void) {
       oled_write_P(PSTR("Abort"), false);
       break;
     case _SYM:
-      oled_write_P(PSTR("Comms"), false);
+      oled_write_P(PSTR("Comm "), false);
       break;
     case _UTIL:
       oled_write_P(PSTR("Stage"), false);
