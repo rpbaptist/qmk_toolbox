@@ -56,3 +56,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 40
 
 #define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont.c"
+
+#define LCPO_KEYS KC_LCTL, KC_RSFT, KC_COMM
+#define RCPC_KEYS KC_RCTL, KC_RSFT, KC_DOT
