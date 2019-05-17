@@ -38,8 +38,8 @@ extern uint8_t is_master;
 #define KC_UT_TAB LT(_UTIL, KC_TAB)
 #define KC_SYMSPC LT(_SYM, KC_SPC)
 
-#define KC_LCTBR LCTL_T(KC_LBRACKET)
-#define KC_RCTBR RCTL_T(KC_RBRACKET)
+// #define KC_LCTBR LCTL_T(KC_LBRACKET)
+// #define KC_RCTBR RCTL_T(KC_RBRACKET)
 
 #define KC_CTRGUI LCTL_T(KC_LGUI)
 #define KC_CTLENT RCTL_T(KC_ENT)
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, _____, _____, _____, ALTSF, _____,                  _____, _____, _____,  UNDS,   EQL, _____,\
+      _____, _____, _____, _____, ALTSF, _____,                  _____,    LT,    GT,  UNDS,   EQL, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____, _____,      DEL, _____, RGUI \
                               //`--------------------'  `--------------------'
