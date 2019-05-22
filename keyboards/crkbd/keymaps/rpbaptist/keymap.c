@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
         RST, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   LTOG, LFMOD,  LHUI,  LSAI,  LVAI,   F12,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                  XXXXX, LRMOD,  LHUD,  LSAD,  LVAD, _____,\
+       PSCR,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                  XXXXX, LRMOD,  LHUD,  LSAD,  LVAD,  CAPS,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____,   SPC,    XXXXX, _____, _____ \
                               //`--------------------'  `--------------------'
