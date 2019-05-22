@@ -2,10 +2,18 @@
 
 extern keymap_config_t keymap_config;
 
-#define COLEMAK TO(0)
-#define QWERTY TO(1)
-#define GAMING TO(3)
-#define RGBCTRL TO(6)
+
+#define _COLEMAKDHM 0
+#define _QWERTY 1
+#define _GAME 3
+#define _FN 7
+#define _SYMB 8
+#define _UTIL 9
+#define _NAV 10
+
+#define COLEMAK DF(0)
+#define QWERTY DF(1)
+#define GAMING DF(3)
 
 #define T_UTIL TT(9)
 #define T_NAV TT(10)
@@ -25,19 +33,11 @@ extern keymap_config_t keymap_config;
 #define FN_ESC LT(_FN, KC_ESC)
 #define SYM_SPC LT(_SYMB, KC_SPC)
 #define UT_TAB LT(_UTIL, KC_TAB)
-
+[
 #define CTRGUI LCTL_T(KC_LGUI)
 #define CTLENT RCTL_T(KC_ENT)
 #define ALTBR LALT_T(KC_LBRACKET)
 #define GUIBR RGUI_T(KC_RBRACKET)
-
-#define _COLEMAKDHM 0
-#define _QWERTY 1
-#define _GAME 3
-#define _FN 7
-#define _SYMB 8
-#define _UTIL 9
-#define _NAV 10
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      UT_TAB,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                               KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     CTRGUI,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_BSPC,          KC_ENT,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, CTLENT,
+     CTRGUI,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    XXXXXXX,          XXXXXXX,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, CTLENT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     ALTBR,   KC_LSPO, SYM_SPC,                    T_NAV, KC_RSPC, GUIBR
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
