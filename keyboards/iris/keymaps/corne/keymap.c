@@ -33,7 +33,7 @@ extern keymap_config_t keymap_config;
 #define FN_ESC LT(_FN, KC_ESC)
 #define SYM_SPC LT(_SYMB, KC_SPC)
 #define UT_TAB LT(_UTIL, KC_TAB)
-[
+
 #define CTRGUI LCTL_T(KC_LGUI)
 #define CTLENT RCTL_T(KC_ENT)
 #define ALTBR LALT_T(KC_LBRACKET)
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, XXXXXXX, XXXXXXX, XXXXXXX, LSFTALT, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UNDS, KC_EQL,  _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______, _______,                   KC_DEL,  _______, RGUI`
+                                    _______, _______, _______,                   KC_DEL,  _______, KC_RGUI
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                            KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           RGB_TOG,  RGB_MOD, RGB_HUI, RGB_SAI,   KC_F10,  KC_F12,
+     RESET,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           RGB_TOG,  RGB_MOD, RGB_HUI, RGB_SAI,   KC_F10,  KC_F12,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, COLEMAK, GAMING,  QWERTY,  XXXXXXX, XXXXXXX, XXXXXXX,           XXXXXXX, XXXXXXX,  RGB_RMOD,  RGB_HUD, RGB_SAD, XXXXXXX, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -115,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-          ESC, XXXXXXX, KC_MSTP, KC_VOLU, KC_MPLY, XXXXXXX,                            XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSLS, KC_PAST,
+      KC_ESC, XXXXXXX, KC_MSTP, KC_VOLU, KC_MPLY, XXXXXXX,                            XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSLS, KC_PAST,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT, XXXXXXX,                            KC_KP_0, KC_KP_4, KC_KP_5, KC_KP_6, KC_MINS, KC_PLUS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, XXXXXXX, KC_WH_L, XXXXXXX, KC_WH_R, XXXXXXX, _______,          _______, XXXXXXX, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, _______,  KC_SPC,                   S_NAV``, _______, RGUI``
+                                    _______, _______,  KC_SPC,                   S_NAV, _______, KC_RGUI
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   )
 };
