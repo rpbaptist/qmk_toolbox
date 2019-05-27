@@ -59,3 +59,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define LCPO_KEYS KC_LCTL, KC_RSFT, KC_COMM
 #define RCPC_KEYS KC_RCTL, KC_RSFT, KC_DOT
+
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
+
+#ifndef NO_DEBUG
+#define NO_DEBUG
+#endif // !NO_DEBUG
+#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
+#define NO_PRINT
+#endif // !NO_PRINT
