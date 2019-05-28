@@ -115,9 +115,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_ESC, XXXXXXX, KC_MSTP, KC_VOLU, KC_MPLY, XXXXXXX,                            XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSLS, KC_PAST,
+      KC_ESC, XXXXXXX, KC_MPRV, KC_VOLU, KC_MNXT, XXXXXXX,                            XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSLS, KC_PAST,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT, XXXXXXX,                            KC_KP_0, KC_KP_4, KC_KP_5, KC_KP_6, KC_MINS, KC_PLUS,
+     _______, XXXXXXX, KC_MSTP, KC_VOLD, KC_MPLY, XXXXXXX,                            KC_KP_0, KC_KP_4, KC_KP_5, KC_KP_6, KC_MINS, KC_PLUS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,          _______, KC_PDOT, KC_KP_1, KC_KP_2, KC_KP_3, KC_PDOT, KC_EQL,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
