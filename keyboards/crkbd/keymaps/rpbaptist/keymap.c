@@ -17,6 +17,9 @@ extern keymap_config_t keymap_config;
 
 extern uint8_t is_master;
 
+#define _COLEMAKDHM 0
+#define _QWERTY 1
+#define _GAME 3
 #define _FN 7
 #define _SYM 8
 #define _UTIL 9
@@ -51,10 +54,6 @@ extern uint8_t is_master;
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
-
-#define _COLEMAKDHM 0
-#define _QWERTY 1
-#define _GAME 3
 
 #define KC______ KC_TRNS
 #define KC_XXXXX KC_NO
