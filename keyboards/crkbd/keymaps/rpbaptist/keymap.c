@@ -139,7 +139,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
         RST, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   LTOG, LFMOD,  LHUI,  LSAI,  LVAI,   F12,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       PSCR,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                  XXXXX, LRMOD,  LHUD,  LSAD,  LVAD,  CAPS,\
+      _____,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                  XXXXX, LRMOD,  LHUD,  LSAD,  LVAD, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____,   SPC,    XXXXX, _____, _____ \
                               //`--------------------'  `--------------------'
@@ -147,11 +147,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_UTIL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      ESC,   XXXXX,  MSTP,  VOLU,  MNXT, XXXXX,                   NLCK,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
+      ESC,   XXXXX,  MSTP,  VOLU,  MNXT,  PAUS,                   NLCK,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX,  MPRV,  VOLD,  MPLY, XXXXX,                   PDOT,  KP_4,  KP_5,  KP_6,  MINS,  PLUS,\
+      _____, XXXXX,  MPRV,  VOLD,  MPLY,   INS,                   CAPS,  KP_4,  KP_5,  KP_6,  MINS,  PLUS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   KP_0,  KP_1,  KP_2,  KP_3,   EQL,   ENT,\
+      _____, XXXXX, XXXXX, XXXXX, XXXXX,  PSCR,                   SLCK,  KP_1,  KP_2,  KP_3,   EQL,   ENT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____,   SPC,     PDOT,  KP_0,  PDOT \
                               //`--------------------'  `--------------------'
