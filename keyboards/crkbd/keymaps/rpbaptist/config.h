@@ -35,6 +35,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_ONESHOT
 #define NO_ACTION_MACRO
 
+#define FORCE_NKRO
+
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 12
@@ -42,7 +44,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SAT_STEP 16
 #define RGBLIGHT_VAL_STEP 16
 
-#define TAPPING_TERM 165
+#define TAPPING_TERM 170
 // #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
 
@@ -59,3 +61,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define LCPO_KEYS KC_LCTL, KC_RSFT, KC_COMM
 #define RCPC_KEYS KC_RCTL, KC_RSFT, KC_DOT
+
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
+
+#ifndef NO_DEBUG
+#define NO_DEBUG
+#endif // !NO_DEBUG
+#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
+#define NO_PRINT
+#endif // !NO_PRINT

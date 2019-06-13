@@ -17,6 +17,10 @@ extern keymap_config_t keymap_config;
 
 extern uint8_t is_master;
 
+#define _COLEMAKDHM 0
+#define _QWERTY 1
+#define _GAME 3
+#define _GAME_EXT 4
 #define _FN 7
 #define _SYM 8
 #define _UTIL 9
@@ -38,6 +42,8 @@ extern uint8_t is_master;
 #define KC_UT_TAB LT(_UTIL, KC_TAB)
 #define KC_SYMSPC LT(_SYM, KC_SPC)
 
+#define KC_GMSPC LT(_GAME_EXT, KC_SPC)
+
 #define KC_LCTLT LCTL_T(KC_LT)
 
 #define KC_CTRGUI LCTL_T(KC_LGUI)
@@ -47,14 +53,10 @@ extern uint8_t is_master;
 #define KC_GUIBR RGUI_T(KC_RBRACKET)
 
 // #define KC_ALSPC LALT_T(KC_SPC)
-#define KC_ALTSF LALT(KC_LSFT)
+// #define KC_ALTSF LALT(KC_LSFT)
 
 #define KC_TABFWD LCTL(KC_TAB)
 #define KC_TABBCK LCTL(LSFT(KC_TAB))
-
-#define _COLEMAKDHM 0
-#define _QWERTY 1
-#define _GAME 3
 
 #define KC______ KC_TRNS
 #define KC_XXXXX KC_NO
@@ -102,11 +104,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       _____, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____, _____,\
+        TAB, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LCTL, _____, _____, _____, _____, _____,                  _____, _____, _____, _____, _____, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LALT, LSFT,  _____,    _____,  RSFT, RGUI \
+                                   LALT, LSFT,  GMSPC,    _____,  RSFT, RGUI \
+                              //`--------------------'  `--------------------'
+  ),
+
+  [_GAME_EXT] = LAYOUT_kc( \
+  //,-----------------------------------------.                ,-----------------------------------------.
+        GRV,     1,     2,     3,     4,     5,                   VOLU,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
+  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
+      _____,     6,     7,     8,     9,     0,                   VOLD,  KP_4,  KP_5,  KP_6,  PMNS,  PPLS,\
+  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
+      _____,  MINS,   EQL,  LBRC,  RBRC,  BSLS,                   MUTE,  KP_1,  KP_2,  KP_3,  PEQL,  PENT,\
+  //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
+                                  _____, _____, _____,     KP_0,  PDOT,  BSPC \
                               //`--------------------'  `--------------------'
   ),
 
@@ -116,15 +130,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        TILD,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  MINS,  PLUS,  PIPE,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LCPO, _____, _____, _____, ALTSF, _____,                  _____, _____, _____,  UNDS,   EQL,  RCPC,\
+       LCPO, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX,  UNDS,   EQL,  RCPC,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____, _____,      DEL, _____, RGUI \
+                                  _____, _____, _____,     LGUI,  RALT, RGUI \
                               //`--------------------'  `--------------------'
   ),
 
   [_NAV] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,  WH_U,TABBCK,  MS_U,TABFWD,  BTN2,                   PGUP,  HOME,    UP,   END, XXXXX,   DEL,\
+        GRV,  WH_U,TABBCK,  MS_U,TABFWD,  BTN2,                   PGUP,  HOME,    UP,   END, XXXXX,   DEL,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
         TAB,  WH_D,  MS_L,  MS_D,  MS_R,  BTN1,                   PGDN,  LEFT,  DOWN,  RGHT, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
@@ -138,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       _____,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10,   F11,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-        RST, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   LTOG, LFMOD,  LHUI,  LSAI,  LVAI,   F12,\
+        RST, XXXXX, XXXXX, XXXXX,  SLEP,  WAKE,                   LTOG, LFMOD,  LHUI,  LSAI,  LVAI,   F12,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____,  CLMK,  GAME, QWERT, XXXXX, XXXXX,                  XXXXX, LRMOD,  LHUD,  LSAD,  LVAD, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -148,13 +162,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_UTIL] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      ESC,   XXXXX,  MSTP,  VOLU,  MNXT, XXXXX,                   NLCK,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
+      ESC,   XXXXX,  MSTP,  VOLU,  MNXT,  PAUS,                   NLCK,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX,  MPRV,  VOLD,  MPLY, XXXXX,                   PDOT,  KP_4,  KP_5,  KP_6,  MINS,  PLUS,\
+      _____, XXXXX,  MPRV,  VOLD,  MPLY,   INS,                   CAPS,  KP_4,  KP_5,  KP_6,  PMNS,  PPLS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   KP_0,  KP_1,  KP_2,  KP_3,   EQL,   ENT,\
+      _____, XXXXX, XXXXX,  MUTE, XXXXX,  PSCR,                   SLCK,  KP_1,  KP_2,  KP_3,  PEQL,  PENT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____,   SPC,    XXXXX,  KP_0,  PDOT \
+                                  _____, _____,   SPC,     KP_0,  PDOT,  BSPC \
                               //`--------------------'  `--------------------'
   ),
 
@@ -176,7 +190,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   if (is_master) {
     return OLED_ROTATION_270;
   } else {
-    return rotation;
+    return OLED_ROTATION_180;
   }
 }
 
@@ -197,7 +211,7 @@ void render_status(void) {
       oled_write_P(PSTR("ORBIT"), false);
       break;
     case _GAME:
-      oled_write_P(PSTR("PULSE"), false);
+      oled_write_P(PSTR("GAME "), false);
       break;
     case _QWERTY:
       oled_write_P(PSTR("DELAY"), false);
@@ -221,6 +235,9 @@ void render_status(void) {
       break;
     case _NAV:
       oled_write_P(PSTR("Gyro "), false);
+      break;
+    case _GAME_EXT:
+      oled_write_P(PSTR("Ext  "), false);
       break;
     default:
       oled_write_P(PSTR("Unkn "), false);
@@ -250,7 +267,7 @@ void oled_task_user(void) {
     render_status();     // Renders the current keyboard state (layer, lock, caps, scroll, etc)
   } else {
     render_crkbd_logo();
-    oled_scroll_left();  // Turns on scrolling
+    // oled_scroll_left();  // Turns on scrolling
   }
 }
 #endif
