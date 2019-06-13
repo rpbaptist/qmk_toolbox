@@ -236,6 +236,9 @@ void render_status(void) {
     case _NAV:
       oled_write_P(PSTR("Gyro "), false);
       break;
+    case _GAME_EXT:
+      oled_write_P(PSTR("Ext  "), false);
+      break;
     default:
       oled_write_P(PSTR("Unkn "), false);
       break;
