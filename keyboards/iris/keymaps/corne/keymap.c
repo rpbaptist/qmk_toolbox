@@ -6,6 +6,7 @@ extern keymap_config_t keymap_config;
 #define _COLEMAKDHM 0
 #define _QWERTY 1
 #define _GAME 3
+#define _GAME_EXT 4
 #define _FN 7
 #define _SYMB 8
 #define _UTIL 9
@@ -33,6 +34,8 @@ extern keymap_config_t keymap_config;
 #define FN_ESC LT(_FN, KC_ESC)
 #define SYM_SPC LT(_SYMB, KC_SPC)
 #define UT_TAB LT(_UTIL, KC_TAB)
+
+#define GAMESPC LT(_GAME_EXT, KC_SPC)
 
 #define CTRGUI LCTL_T(KC_LGUI)
 #define CTLENT RCTL_T(KC_ENT)
@@ -79,7 +82,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LCTL, _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LALT,  KC_LSFT, _______,                    _______,KC_RSFT, KC_RGUI
+                                    KC_LALT,  KC_LSFT, GAMESPC,                    _______,KC_RSFT, KC_RGUI
+                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+  ),
+
+  [_GAME_EXT] = LAYOUT(
+  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+       KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                              KC_VOLU, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSLS, KC_PAST,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     _______,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,                               KC_VOLD, KC_KP_4, KC_KP_5, KC_KP_6, KC_PMNS, KC_PPLS,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     _______, KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS, _______,          _______,  KC_MUTE, KC_KP_1, KC_KP_2, KC_KP_3, KC_PEQL, KC_PENT,
+  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
+                                    _______, _______, _______,                    KC_KP_0, KC_PDOT, KC_BSPC
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
