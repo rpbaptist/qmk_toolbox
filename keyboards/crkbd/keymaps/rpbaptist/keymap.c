@@ -164,9 +164,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       ESC,   XXXXX,  MSTP,  VOLU,  MNXT,  PAUS,                   NLCK,  KP_7,  KP_8,  KP_9,  PSLS,  PAST,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX,  MPRV,  VOLD,  MPLY,   INS,                   CAPS,  KP_4,  KP_5,  KP_6,  MINS,  PLUS,\
+      _____, XXXXX,  MPRV,  VOLD,  MPLY,   INS,                   CAPS,  KP_4,  KP_5,  KP_6,  PMNS,  PPLS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX, XXXXX, XXXXX, XXXXX,  PSCR,                   SLCK,  KP_1,  KP_2,  KP_3,   EQL,   ENT,\
+      _____, XXXXX, XXXXX,  MUTE, XXXXX,  PSCR,                   SLCK,  KP_1,  KP_2,  KP_3,  PEQL,  PENT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____,   SPC,     KP_0,  PDOT,  BSPC \
                               //`--------------------'  `--------------------'
