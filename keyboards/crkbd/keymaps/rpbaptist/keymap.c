@@ -211,7 +211,7 @@ void render_status(void) {
       oled_write_P(PSTR("ORBIT"), false);
       break;
     case _GAME:
-      oled_write_P(PSTR("PULSE"), false);
+      oled_write_P(PSTR("GAME "), false);
       break;
     case _QWERTY:
       oled_write_P(PSTR("DELAY"), false);
